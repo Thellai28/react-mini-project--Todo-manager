@@ -18,8 +18,8 @@ function LoginComponent(){
         setPassword( event.target.value );
     }
 
-    function handleSubmit(){
-        if( authContext.login( userName, password) ){
+    async function handleSubmit(){ // asyn keyword is used here : 
+        if( await authContext.login(userName, password) ){ // await keyword is used here : 
             navigate(`/welcome/${userName}`); // This is not single quotes, this is tild symbol ( button present belwo ESC button in keyboard )
         }else {
             setshowErrorMessge(true);
@@ -39,10 +39,10 @@ function LoginComponent(){
                 </div>
                 <div >
                     <label> password</label>
-                    < input type="password" name ="password" value={password} onChange = {handlePasswordChange}/>
+                    < input type="password" name ="password" value = {password} onChange = {handlePasswordChange}/>
                 </div>
                 <div>
-                    <button type="button" name ="login" onClick={handleSubmit}>Login</button>
+                    <button type="button" name ="login" onClick = {handleSubmit}>Login</button>
                 </div>
             </div>
         </div>

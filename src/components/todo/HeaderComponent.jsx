@@ -7,11 +7,12 @@ function HeaderComponent(){
     const authContext = useAuth();
     const isAuthenticated = authContext.isAuthenticated;
 
-    console.log( authContext    );
+    console.log( authContext );
 
     function logout(){
         authContext.logout();
     }
+    
     return (
         <header className="border-bottom border-light border-5 mb-5 p-2">
             <div className="container">
